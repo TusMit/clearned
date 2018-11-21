@@ -1,0 +1,42 @@
+struct定义结构体；
+struuct {
+  int x;
+  int y;
+}Farm;
+初始化成员变量：
+struct Farm farm;
+farm.x=1;
+farm.y=1;
+定义指向结构体的指针，
+Farm *p=&farm;
+指针p指向结构体第一个元素的指针；
+通过指针访问成员数据：
+p->y;
+p->x;
+
+也可以定义结构体数组：
+struct Farm nums[]={{1,2},{2,2},{2,3}};
+指向数组的一个元素指针
+Farm *p = nums;
+访问第一个元素的数据：
+p->x;
+p->y;
+(p+1) ->x;
+(p+1)->y;
+
+typedef 仅限与为类型定义别名：
+typedef struct{
+  int x;
+  int b;
+}Farm;
+Farm =farm;
+
+#define 也可以为数值定义别名：
+#define Monday=1;
+
+enum 定义枚举
+第一个默认值为0;后面依次加1；
+enum Day 
+{Monday = 1; Friday = 5 ;Saturday;Sun};
+Saturday 默认以6；
+Sunday 默认为7；
