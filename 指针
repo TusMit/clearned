@@ -1,0 +1,10 @@
+指针记录数据的地址；
+*p返回指针所对应的数据；
+函数返回数组：
+int*a (int*nums){
+  static int a []={0};
+  for(int i=0;i<sizeof(nums);i++){
+    a[i]=nums[i];
+   }
+  return a;
+}
