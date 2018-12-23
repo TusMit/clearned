@@ -1,0 +1,42 @@
+#include<stdio.h>
+struct linestack{
+    int val;
+    struct linestack* next;
+};
+
+struct linestack* push(struct linestack* stack,int a){
+    struct linestack* head = (struct linestack*)malloc(sizeof(struct linestack));
+    head ->val = a;
+    head ->next = stack;
+    return head;
+}
+
+struct linestack* pop(struct linestack* stack){
+    if(stack){
+        struct linestack* temp = stack;
+        stack = stack ->next;
+        printf("当前元素：%d\n",temp ->val);
+        if(stack == NULL){
+            printf("栈已空%d\n");
+        }
+        free(temp);
+    }else{
+        printf("栈已空%d\n");
+        return stack;
+    }
+    return stack;
+}
+
+int main(){
+    struct linestack* stack = NULL;
+    stack = push(stack,1);
+    stack = push(stack,2);
+    stack = push(stack,3);
+    stack = push(stack,4);
+    stack = pop(stack);
+    stack = pop(stack);
+    stack = pop(stack);
+    stack = pop(stack);
+    stack = pop(stack);
+    return -1;
+}
