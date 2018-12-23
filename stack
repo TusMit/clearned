@@ -1,0 +1,31 @@
+顺序栈：
+#include<stdio.h>
+/*进栈*/
+int instack(int* a,int top,int elem){
+    top ++;
+    a[top] = elem;
+    return top;
+}
+/*出栈*/
+int outstack(int* a,int top){
+    if(top == -1){
+        printf("空栈！");
+    }
+    printf("%d\n",a[top]);
+    top --;
+    return top;
+}
+
+int main(){
+    int top = -1;
+    int a [] = {};
+    top = instack(a,top,1);
+    top = instack(a,top,2);
+    top = instack(a,top,3);
+    top = instack(a,top,4);
+    top = outstack(a,top);
+    top = outstack(a,top);
+    top = outstack(a,top);
+    top = outstack(a,top);
+    return -1;
+}
